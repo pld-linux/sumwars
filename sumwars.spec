@@ -13,9 +13,10 @@ Source0:	%{name}-%{version}-svn.tar.gz
 # Source0-md5:	cf169a6f0c285d05dba490a80d164ef4
 Patch0:		%{name}-paths.patch
 URL:		http://www.sumwars.org/
-BuildRequires:	CEGUI-Ogre >= 0.7.0
+#BuildRequires:	CEGUI-Ogre >= 0.7.0
 BuildRequires:	cmake >= 2.6.0
 BuildRequires:	enet-devel >= 1.2
+BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,6 +30,7 @@ graczowi jak również grę sieciową pozwalającą na grę od 2 do 8 graczy.
 
 %prep
 %setup -q -n %{name}
+%undos src/gui/application.cpp
 %patch0 -p1
 %{__sed} -i 's,./resources,resources,;s,./data,data,' resources.cfg
 
