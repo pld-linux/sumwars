@@ -5,7 +5,7 @@
 Summary:	An open source role-playing game
 Summary(pl.UTF-8):	Otwarta gra typu RPG
 Name:		sumwars
-Version:	%{svn_ver}
+Version:	%{svn_rev}
 Release:	0.svn.1
 License:	GPL v3+
 Group:		X11/Applications/Games
