@@ -13,9 +13,15 @@ Source0:	%{name}-%{version}-svn.tar.gz
 # Source0-md5:	cf169a6f0c285d05dba490a80d164ef4
 Patch0:		%{name}-paths.patch
 URL:		http://www.sumwars.org/
-#BuildRequires:	CEGUI-Ogre >= 0.7.0
+BuildRequires:	CEGUI-Ogre >= 0.7.0
+BuildRequires:	OpenAL-devel
 BuildRequires:	cmake >= 2.6.0
 BuildRequires:	enet-devel >= 1.2
+BuildRequires:	freealut-deve
+BuildRequires:	libogg-devel
+BuildRequires:	libvorbis-devel
+BuildRequires:	lua51-devel
+BuildRequires:	ogre-devel >= 1.7.0
 BuildRequires:	rpmbuild(macros) >= 1.566
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
