@@ -1,0 +1,32 @@
+--- sumwars/src/gui/application.cpp~	2010-11-17 14:34:57.000000000 +0100
++++ sumwars/src/gui/application.cpp	2010-11-17 15:58:59.954862668 +0100
+@@ -90,7 +90,7 @@
+     Ogre::String plugins = macPath();
+     m_ogre_root = new Ogre::Root(plugins + "/plugins_mac.cfg", plugins + "/ogre.cfg", path + "/ogre.log");
+ #else
+-	m_ogre_root = new Ogre::Root("plugins.cfg", "ogre.cfg");
++    m_ogre_root = new Ogre::Root("/usr/share/games/sumwars/plugins.cfg", "/usr/share/games/sumwars/ogre.cfg");
+ #endif
+ 
+ 	if (m_ogre_root ==0)
+@@ -369,7 +369,7 @@
+ #ifdef NOMIPMAPS
+ 	Ogre::TextureManager::getSingleton().setDefaultNumMipmaps(0);
+ #endif
+-    Ogre::String path = "";
++    Ogre::String path = "/usr/share/games/sumwars/";
+ #ifdef __APPLE__
+     path = macPath();
+     path.append("/");
+ 
+--- sumwars/src/gui/creditswindow.cpp~	2010-11-17 14:34:57.000000000 +0100
++++ sumwars/src/gui/creditswindow.cpp	2010-11-17 17:42:28.478860201 +0100
+@@ -36,7 +36,7 @@
+ 
+ 	Ogre::ConfigFile cf;
+ #ifndef __APPLE__
+-	cf.load("authors.txt");
++	cf.load("/usr/share/games/sumwars/authors.txt");
+ #else
+     Ogre::String path;
+     CFBundleRef mainBundle = CFBundleGetMainBundle();
