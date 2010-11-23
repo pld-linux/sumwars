@@ -17,7 +17,7 @@ BuildRequires:	CEGUI-Ogre >= 0.7.0
 BuildRequires:	OpenAL-devel
 BuildRequires:	cmake >= 2.6.0
 BuildRequires:	enet-devel >= 1.2
-BuildRequires:	freealut-deve
+BuildRequires:	freealut-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	lua51-devel
