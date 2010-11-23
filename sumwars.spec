@@ -1,7 +1,7 @@
 #
 # TODO: create ~/.sumwars/save directory and use it to store saved games
 #
-%define		svn_rev	2169
+%define		svn_rev	2176
 Summary:	An open source role-playing game
 Summary(pl.UTF-8):	Otwarta gra typu RPG
 Name:		sumwars
@@ -10,7 +10,7 @@ Release:	0.svn.1
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	%{name}-%{version}-svn.tar.gz
-# Source0-md5:	cf169a6f0c285d05dba490a80d164ef4
+# Source0-md5:	c006cda476ad4814d461de551f7a519c
 Patch0:		%{name}-paths.patch
 URL:		http://www.sumwars.org/
 BuildRequires:	CEGUI-Ogre >= 0.7.0
