@@ -1,7 +1,7 @@
 #
 # TODO: create ~/.sumwars/save directory and use it to store saved games
 #
-%define		svn_rev	2176
+%define		svn_rev	2190
 Summary:	An open source role-playing game
 Summary(pl.UTF-8):	Otwarta gra typu RPG
 Name:		sumwars
@@ -10,7 +10,7 @@ Release:	0.svn.1
 License:	GPL v3+
 Group:		X11/Applications/Games
 Source0:	%{name}-%{version}-svn.tar.gz
-# Source0-md5:	c006cda476ad4814d461de551f7a519c
+# Source0-md5:	5bf441ae1d75f7bb6faa3eab023ecf52
 Patch0:		%{name}-paths.patch
 URL:		http://www.sumwars.org/
 BuildRequires:	CEGUI-Ogre >= 0.7.0
@@ -51,10 +51,10 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/games/%{name}}
 
-install build/sumwars $RPM_BUILD_ROOT%{_bindir}
-install ogre.cfg plugins.cfg resources.cfg $RPM_BUILD_ROOT%{_datadir}/games/%{name}
-install authors.txt $RPM_BUILD_ROOT%{_datadir}/games/%{name}
-cp -r resources data $RPM_BUILD_ROOT%{_datadir}/games/%{name}
+cp -a build/sumwars $RPM_BUILD_ROOT%{_bindir}
+cp -a ogre.cfg plugins.cfg resources.cfg $RPM_BUILD_ROOT%{_datadir}/games/%{name}
+cp -a  authors.txt $RPM_BUILD_ROOT%{_datadir}/games/%{name}
+cp -a resources data $RPM_BUILD_ROOT%{_datadir}/games/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
