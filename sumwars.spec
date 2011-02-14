@@ -1,19 +1,19 @@
 #
 # TODO: create ~/.sumwars/save directory and use it to store saved games
 #
-%define		svn_rev	r2190
+%define         file_version    %(echo %{version} | tr . -)
 Summary:	An open source role-playing game
 Summary(pl.UTF-8):	Otwarta gra typu RPG
 Name:		sumwars
-Version:	%{svn_rev}
-Release:	0.%{svn_ver}.1
+Version:	0.5.4
+Release:	0.1
 License:	GPL v3+
 Group:		X11/Applications/Games
-Source0:	%{name}-%{version}-svn.tar.gz
-# Source0-md5:	5bf441ae1d75f7bb6faa3eab023ecf52
+Source0:	http://downloads.sourceforge.net/sumwars/%{name}_%{file_version}_src.tgz
+# Source0-md5:	98fe18a749614b5a640f2b36fa819f47
 Patch0:		%{name}-paths.patch
 URL:		http://www.sumwars.org/
-BuildRequires:	CEGUI-Ogre >= 0.7.0
+BuildRequires:	CEGUI-devel >= 0.7.5-2
 BuildRequires:	OpenAL-devel
 BuildRequires:	cmake >= 2.6.0
 BuildRequires:	enet-devel >= 1.2
@@ -35,7 +35,7 @@ Summoning Wars jest otwartą grą typu RPG, umożliwiającą grę jednemu
 graczowi jak również grę sieciową pozwalającą na grę od 2 do 8 graczy.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}_%{file_version}_src
 %undos src/gui/application.cpp
 %patch0 -p1
 %{__sed} -i 's,./resources,resources,;s,./data,data,' resources.cfg
