@@ -37,7 +37,7 @@ graczowi jak również grę sieciową pozwalającą na grę od 2 do 8 graczy.
 %prep
 %setup -q -n %{name}_%{file_version}_src
 %undos src/gui/application.cpp
-%patch0 -p1
+%patch -P0 -p1
 %{__sed} -i 's,./resources,resources,;s,./data,data,' resources.cfg
 
 %build
